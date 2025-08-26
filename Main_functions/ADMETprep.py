@@ -176,3 +176,8 @@ def get_sub_dfs(df, list_column_groups, name):
 
     print(f"====== {name} ======\n")
     return df_fq, df_medchem, df_abs, df_dis, df_metab, df_exc, df_tox
+def display_min_max(df, list_of_properties):
+    x = df[list_of_properties]
+    a = x.min()
+    b = x.max()
+    return x, a, b
