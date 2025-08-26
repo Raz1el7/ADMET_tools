@@ -1,0 +1,421 @@
+column_groups_fq = {
+    # ========== FQ ========== #
+    "MW": ['MW','molecular_weight', 'MOL_WEIGHT'],
+    "Vol": ['Vol'],
+    "Formula": ['Formula'],
+    "Dense": ['Dense'],
+    "HBA": ['nHA', 'hydrogen_bond_acceptors', '#ACCEPTORS','#H-bond acceptors'],
+    "HBD": ['nHD','hydrogen_bond_donors', '#DONORS', '#H-bond donors'],
+    "TPSA": ['TPSA', 'tpsa', 'SURFACE_AREA'],
+    "RB": ['nRot', '#ROTATABLE_BONDS', '#Rotatable bonds'],
+    "nRing": ['nRing'], #Número de anillos
+    "MaxRing": ['MaxRing'], #Número de átomos en los anillos más grandes.*
+    "nHet": ['nHet'], #Número de heteroatomos
+    "fChar": ['fChar'], #Carga formal
+    "nRig": ['nRig'],#Número de enlaces rígidos
+    "Flex" : ['Flex'], #Flexibilidad
+    "nStereo": ['nStereo', 'stereo_centers'], #Número de Estéreo centros
+
+    "logS": ['logS','[General Properties/Log S] Predictions', 'Solubility_AqSolDB', 'Water solubility'],
+    "logS_Interpretation": ['[General Properties/Log S] Interpretation'],
+
+    "logD": ['logD', '[General Properties/Log(D) at pH=7.4] Predictions'], #Aromatic heavy atoms
+    "logD_Interpretation": ['[General Properties/Log(D) at pH=7.4] Interpretation'],
+
+    "logP": ['logP', 'LOGP', 'Consensus Log P', '[General Properties/Log(P)] Predictions'],
+    "logP_Interpretation": ['[General Properties/Log(P)] Interpretation'],
+
+    "logVP": ['[General Properties/Log(Vapor Pressure)] Predictions'],
+    "logVP_Interpretation": ['[General Properties/Log(Vapor Pressure)] Interpretation'],
+
+    "IlogP": ['iLOGP'],
+    "XlogP3": ['XLOGP3'],
+    "WlogP": ['WLOGP'],
+    "MlogP": ['MLOGP'],
+    "SilicosIT_logP": ['Silicos-IT Log P'],
+    "ESOL_logS": ['ESOL Log S'],
+    "ESOL_Solubility_(mg/ml)": ['ESOL Solubility (mg/ml)'],
+    "ESOL_Solubility_(mol/l)": ['ESOL Solubility (mol/l)'],
+    "ESOL_Class": ['ESOL Class'],
+    "Ali_logS": ['Ali Log S'],
+    "Ali_Solubility_(mg/ml)": ['Ali Solubility (mg/ml)'],
+    "Ali_Solubility_(mol/l)": ['Ali Solubility (mol/l)'],
+    "Ali_Class": ['Ali Class'],
+    "SilicosIT_logSw": ['Silicos-IT LogSw'],
+    "SilicosIT_Solubility_(mg/ml)": ['Silicos-IT Solubility (mg/ml)'],
+    "SilicosIT_Solubility_(mol/l)": ['Silicos-IT Solubility (mol/l)'],
+    "SilicosIT_class": ['Silicos-IT class'],
+
+    "Melting_Point": ['mp', '[General Properties/Melting Point] Predictions'], #Temperatura de fusión
+    "Melting_Point_Interpretation": ['[General Properties/Melting Point] Interpretation'],
+
+    "Boiling_Point": ['bp',
+                      '[General Properties/Boiling Point] Predictions'], #Temperatura de evaporación
+    'Boiling_Point_Interpretation':['[General Properties/Boiling Point] Interpretation'],
+
+    "pka_acidic": ['pka_acidic', '[General Properties/pKa Acid] Predictions'], #Sitio ácidos
+    "pka_acidic_Interpretation": ['[General Properties/pKa Acid] Interpretation'],
+
+    "pka_basic": ['pka_basic', '[General Properties/pKa Basic] Predictions'], #Sitio bases
+    "pka_basic_Interpretation": ['[General Properties/pKa Basic] Interpretation'],
+
+    "HydFreeEnergy": ['HydrationFreeEnergy_FreeSolv',
+                      '[General Properties/Hydration Free Energy] Predictions'],
+    "HydFreeEnergy_Interpretation": ['[General Properties/Hydration Free Energy] Interpretation'],
+
+    "Lipophilicity": ['Lipophilicity_AstraZeneca'],
+    "nHeavy": ['#Heavy atoms'], #Atomos pesados
+    "nAromatic_Heavy": ['#Aromatic heavy atoms'], #Número de atómos aromaticos pesados
+    "MR": ['MR'],#Refractividad molar
+    }
+column_groups_medchem= {
+    # ========== MedChem ========== #
+    "f_Csp3": ['Fraction Csp3','Fsp3'],
+    "Lipinski_violations": ['Lipinski #violations', 'Lipinski'],
+    "Ghose_violations": ['Ghose #violations'],
+    "Veber_violations": ['Veber #violations'],
+    "Egan_violations": ['Egan #violations'],
+    "Muegge_violations": ['Muegge #violations'],
+    "Pfizer_violations": ['Pfizer'],
+    "GSK_violations": ['GSK'],
+    "GoldenTriangle": ['GoldenTriangle'],
+    "Bioavailability_Score": ['Bioavailability Score', 'Bioavailability_Ma'],
+    "nPAINS": ['PAINS #alerts'],
+    "PAINS_alerts": ['PAINS'],
+    "Brenk_alerts": ['Brenk #alerts'],
+    "Leadlikeness_violations": ['Leadlikeness #violations'],
+    "SAscore": ['Synthetic Accessibility','Synth'],
+    "QED": ['QED'],
+    "gasa": ['gasa'],
+    "MCE_18": ['MCE-18'], #Novedad molecular en temrinos de complejidad sp3
+    "NPscore": ['Natural Product-likeness'],
+    "Alarm_NMR": ['Alarm_NMR'], #!!!!!!!
+    "BMS": ['BMS'], # (compuestos reactivos, indeseables)**
+    "Chelating": ['Chelating'], #compuestos quelantes
+    "Aggregators": ['Aggregators'],
+    "Fluc": ['Fluc'], #Interferencias en ensayos HTS
+    "Other_assay_interference": ['Other_assay_interference'],
+    "Promiscuous": ['Promiscuous'],
+    "Blue_fluorescence": ['Blue_fluorescence'],
+    "Green_fluorescence": ['Green_fluorescence'],
+    "Reactive": ['Reactive'],
+    }
+column_groups_abs= {
+    # ========== Absorption ========== #
+    "HIA_prob_down": ['HIA_Hou', '[Absorption/Human Intestinal Absorption] Probability'],
+    "HIA_prob_up": ['hia'],
+    "HIA_category": ['GI absorption', '[Absorption/Human Intestinal Absorption] Predictions'],
+    "HIA_percentage": [ 'Intestinal absorption (human)',],
+    "HIA_Interpretation":['[Absorption/Human Intestinal Absorption] Interpretation'], #DeepPK
+
+    "Pgp_inh_category": ['P-glycoprotein I inhibitor',
+                '[Absorption/P-Glycoprotein Inhibitor] Predictions'],
+    "Pgp_inh_prob": ['pgp_inh', 'Pgp_Broccatelli', '[Absorption/P-Glycoprotein Inhibitor] Probability'],
+    "Pgp_inh_Interpretation": ['[Absorption/P-Glycoprotein Inhibitor] Interpretation'],
+
+    "Pgp_inh_2": ['P-glycoprotein II inhibitor'],
+
+    "Pgp_sub_category": ['Pgp substrate','P-glycoprotein substrate',
+                '[Absorption/P-Glycoprotein Substrate] Predictions'],
+    "Pgp_sub_prob": ['pgp_sub','[Absorption/P-Glycoprotein Substrate] Probability' ],
+    "Pgp_sub_Interpretation": ['[Absorption/P-Glycoprotein Substrate] Interpretation'],
+
+    "logKp_cm_s": ['log Kp (cm/s)'],
+    "logKp_cm_h": ['Skin Permeability','[Absorption/Skin Permeability] Predictions'],
+    "logKp_Interpretation": ['[Absorption/Skin Permeability] Interpretation'],
+
+    "PAMPA_up": ['PAMPA'],
+    "PAMPA_down": ['PAMPA_NCATS'],
+
+    "Caco2_logPaap": ['caco2','Caco2_Wang','[Absorption/Caco-2 (logPaap)] Predictions'],
+    "Caco2_Paap": ['Caco2 permeability'],
+    "Caco2_Interpretation": ['[Absorption/Caco-2 (logPaap)] Interpretation'],
+
+    "MDCK": ['MDCK','[Absorption/Madin-Darby Canine Kidney] Predictions'],
+    "MDCK_Interpretation": ['[Absorption/Madin-Darby Canine Kidney] Interpretation'],
+
+    "f20": ['f20','[Absorption/Human Oral Bioavailability 20%] Predictions'],
+    "f20_Interpretation": ['[Absorption/Human Oral Bioavailability 20%] Interpretation'],
+    "f20_Probability": ['[Absorption/Human Oral Bioavailability 20%] Probability'],
+
+    "f30": ['f30'],
+
+    "f50": ['f50', '[Absorption/Human Oral Bioavailability 50%] Predictions'],
+    "f50_Interpretation": ['[Absorption/Human Oral Bioavailability 50%] Interpretation'],
+    "f50_Probability": ['[Absorption/Human Oral Bioavailability 50%] Probability'],
+
+
+    }
+column_groups_dis= {
+    # ========== Distribution ========== #
+    "BBB_category": ['BBB permeant', '[Distribution/Blood-Brain Barrier] Predictions'],
+    "BBB_prob_up": ['BBB_Martins', 'BBB'], #,'[Distribution/Blood-Brain Barrier] Probability'],
+    "BBB_prob_down": ['BBB permeability'],
+    "BBB_Interpretation": ['[Distribution/Blood-Brain Barrier] Interpretation'],
+    "CNS": ['CNS permeability', '[Distribution/Blood-Brain Barrier (Central Nervous System)] Predictions'],
+    "CNS_Interpretation": ['[Distribution/Blood-Brain Barrier (Central Nervous System)] Interpretation'],
+
+    "PPB": ['PPBR_AZ', 'PPB',
+            '[Distribution/Plasma Protein Binding] Predictions',], #unión con proteínas plasmáticas.
+    "PPB_Interpretation": ['[Distribution/Plasma Protein Binding] Interpretation'],
+
+    "VDss": ['logVDss', 'VDss (human)', 'VDss_Lombardo',' [Distribution/Steady State Volume of Distribution] Predictions'],
+    "VDss_Interpretation": [ '[Distribution/Steady State Volume of Distribution] Interpretation'],
+
+    "BSEP": ['BSEP'],
+    "MRP1": ['MRP1'],
+
+    "Fu_porcentage": ['Fu'],
+    "Fu_prob": [ 'Fraction unbound (human)','[Distribution/Fraction Unbound (Human)] Predictions'],
+    "Fu_Interpretation" : ['[Distribution/Fraction Unbound (Human)] Interpretation'],
+    }
+column_groups_metab= {
+    # ========== Metabolism ========== #
+    #CYP1A2_inh_Interpretation,    
+    "CYP1A2_inh_category": [ 'CYP1A2 inhibitor', '[Metabolism/CYP 1A2 Inhibitor] Predictions','CYP1A2 inhibitior'],
+    "CYP1A2_inh_prob": ['CYP1A2-inh','CYP1A2_Veith', '[Metabolism/CYP 1A2 Inhibitor] Probability'],
+    "CYP1A2_inh_Interpretation": ['[Metabolism/CYP 1A2 Inhibitor] Interpretation'],
+
+    "CYP1A2_sub_category": ['[Metabolism/CYP 1A2_substrate] Predictions'],
+    "CYP1A2_sub_prob": ['CYP1A2-sub','[Metabolism/CYP 1A2_substrate] Probability'],
+    "CYP1A2_sub_Interpretation": ['[Metabolism/CYP 1A2_substrate] Interpretation'],
+
+    "CYP2B6_inh": ['CYP2B6-inh'],
+    "CYP2B6_sub": ['CYP2B6-sub'],
+    "CYP2C8_inh": ['CYP2C8-inh'],
+
+    "CYP2C9_inh_category": ['CYP2C9 inhibitor','[Metabolism/CYP 2C9 Inhibitor] Predictions','CYP2C9 inhibitior'],
+    "CYP2C9_inh_prob": ['CYP2C9-inh', 'CYP2C9_Veith','[Metabolism/CYP 2C9 Inhibitor] Probability'],
+    "CYP2C9_inh_Interpretation": ['[Metabolism/CYP 2C9 Inhibitor] Interpretation'],
+
+    "CYP2C9_sub_category": ['[Metabolism/CYP 2C9 Substrate] Predictions'],
+    "CYP2C9_sub_prob": ['CYP2C9-sub','CYP2C9_Substrate_CarbonMangels','[Metabolism/CYP 2C9 Substrate] Probability'],
+    "CYP2C9_sub_Interpretation": ['[Metabolism/CYP 2C9 Substrate] Interpretation'],
+
+    "CYP2C19_inh_category": ['CYP2C19 inhibitor','[Metabolism/CYP 2C19 Inhibitor] Predictions','CYP2C19 inhibitior'],
+    "CYP2C19_inh_prob": ['CYP2C19-inh', 'CYP2C19_Veith','[Metabolism/CYP 2C19 Inhibitor] Probability'],
+    "CYP2C19_inh_Interpretation": ['[Metabolism/CYP 2C19 Inhibitor] Interpretation'],
+
+    "CYP2C19_sub_category": ['[Metabolism/CYP 2C19_substrate] Predictions'],
+    "CYP2C19_sub_prob": ['CYP2C19-sub','[Metabolism/CYP 2C19_substrate] Probability'],
+    "CYP2C19_sub_Interpretation": ['[Metabolism/CYP 2C19_substrate] Interpretation'],
+
+    "CYP2D6_inh_category": ['CYP2D6 inhibitior','[Metabolism/CYP 2D6 Inhibitor] Predictions'],
+    "CYP2D6_inh_prob": ['CYP2D6-inh', 'CYP2D6_Veith','[Metabolism/CYP 2D6 Inhibitor] Probability'],
+    "CYP2D6_inh_Interpretation": ['[Metabolism/CYP 2D6 Inhibitor] Interpretation'],
+
+    "CYP2D6_sub_category": [ 'CYP2D6 substrate','[Metabolism/CYP 2D6 Substrate] Predictions', 'CYP2D6 inhibitor'],
+    "CYP2D6_sub_prob": ['CYP2D6-sub', 'CYP2D6_Substrate_CarbonMangels','[Metabolism/CYP 2D6 Substrate] Probability'],
+    "CYP2D6_sub_Interpretation": ['[Metabolism/CYP 2D6 Substrate] Interpretation'],
+
+    "CYP3A4_inh_category": [ 'CYP3A4 inhibitor', '[Metabolism/CYP 3A4 Inhibitor] Predictions','CYP3A4 inhibitior'],
+    "CYP3A4_inh_prob": ['CYP3A4-inh', 'CYP3A4_Veith','[Metabolism/CYP 3A4 Inhibitor] Probability'],
+    "CYP3A4_inh_Interpretation": ['[Metabolism/CYP 3A4 Inhibitor] Interpretation'],
+
+    "CYP3A4_sub_category": [ 'CYP3A4 substrate','[Metabolism/CYP 3A4 Substrate] Predictions'],
+    "CYP3A4_sub_prob": ['CYP3A4-sub', 'CYP3A4_Substrate_CarbonMangels','[Metabolism/CYP 3A4 Substrate] Probability'],
+    "CYP3A4_sub_Interpretation": ['[Metabolism/CYP 3A4 Substrate] Interpretation'],
+
+    "LM_human": ['LM-human'],
+
+    "BCRP_category":['[Metabolism/Breast Cancer Resistance Protein] Predictions'],
+    "BCRP_prob": ['BCRP', '[Metabolism/Breast Cancer Resistance Protein] Probability'],
+    "BCRP_Interpretation": ['[Metabolism/Breast Cancer Resistance Protein] Interpretation'],
+
+    "OATP1B1_category": [  '[Metabolism/OATP1B1] Predictions'],
+    "OATP1B1_prob": ['OATP1B1','[Metabolism/OATP1B1] Probability'],
+    "OATP1B1_Interpretation": ['[Metabolism/OATP1B1] Interpretation'],
+
+    "OATP1B3_category": ['[Metabolism/OATP1B3] Predictions'],
+    "OATP1B3_prob": [ 'OATP1B3','[Metabolism/OATP1B3] Probability'],
+    "OATP1B3_Interpretation": ['[Metabolism/OATP1B3] Interpretation'],
+    }
+column_groups_exc= {
+    # ========== Excretion ========== #
+    "Cl_total_log": ['Total Clearance'],
+    "Cl_total": ['[Excretion/Clearance] Predictions'],
+    "Cl_total_Interpretation": ['[Excretion/Clearance] Interpretation'],
+    "Cl_plasma": ['cl-plasma'],
+    "Cl_hepatocyte": ['Clearance_Hepatocyte_AZ'],
+    "Cl_microsome": ['Clearance_Microsome_AZ',],
+
+    "Renal_OCT2_subs_category": ['Renal OCT2 substrate',
+                        '[Excretion/Organic Cation Transporter 2] Predictions'],
+    "Renal_OCT2_subs_prob": ['[Excretion/Organic Cation Transporter 2] Probability'],
+    "Renal_OCT2_subs_Interpretation": ['[Excretion/Organic Cation Transporter 2] Interpretation'],
+
+    "t_05_category": ['[Excretion/Half-Life of Drug] Predictions'],
+    "t_05": ['t0.5', 'Half_Life_Obach', 't05' ],
+    "t_05_Interpretation": ['[Excretion/Half-Life of Drug] Interpretation'],
+    "t_05_Probability": ['[Excretion/Half-Life of Drug] Probability'],
+
+    }
+column_groups_tox= {
+    # ========== Toxicity ========== #
+    "BCF": ['BCF','[Toxicity/Bioconcentration Factor] Predictions'],
+    #"BCF_Interpretation": ['[Toxicity/Bioconcentration Factor] Interpretation'],
+
+    "IGC50": ['IGC50'],
+    "PIGC50": ['<i>T.Pyriformis</i> toxicity','[Toxicity/T. Pyriformis] Predictions'],
+    "IGC50_Interpretation": ['[Toxicity/T. Pyriformis] Interpretation'],
+    
+    "LC50DM": ['LC50DM','[Toxicity/Daphnia Maga] Predictions'],
+    #"LC50DM_Interpretation": ['[Toxicity/Daphnia Maga] Interpretation'],
+
+    "LogLC50": ['Minnow toxicity', '[Toxicity/Fathead Minnow] Predictions'],
+    "LC50FM": ['LC50FM',],
+    "LC50FM_Interpretation": ['[Toxicity/Fathead Minnow] Interpretation'],
+
+    "hERG_prob": ['[Toxicity/hERG Blockers] Probability', 'hERG'],
+    "hERG_category": ['hERG I inhibitor', '[Toxicity/hERG Blockers] Predictions'],
+    "hERG_Interpretation": ['[Toxicity/hERG Blockers] Interpretation'],
+
+    "hERG_II_category": ['hERG II inhibitor'],
+    "hERG_10um_prob": ['hERG-10um'],
+
+    "DILI_category": ['Hepatotoxicity', '[Toxicity/Liver Injury I (DILI)] Predictions'],
+    "DILI_prob": ['DILI', '[Toxicity/Liver Injury I (DILI)] Probability'],
+    "DILI_Interpretation": ['[Toxicity/Liver Injury I (DILI)] Interpretation'],
+
+    "LI_II_category": ['[Toxicity/Liver Injury II] Predictions'],
+    "LI_II_Interpretation": ['[Toxicity/Liver Injury II] Interpretation'],
+    "LI_II_prob": ['[Toxicity/Liver Injury II] Probability'],
+
+    "Ames_category": [ 'AMES toxicity','[Toxicity/AMES Mutagenesis] Predictions'],
+    "Ames_Interpretation": ['[Toxicity/AMES Mutagenesis] Interpretation'],
+    "Ames_prob": ['Ames', 'AMES','[Toxicity/AMES Mutagenesis] Probability'],
+
+    "ROA_prob": ['ROA'],
+    "FDAMDD_prob": ['FDAMDD'],
+
+    "SkinSen_prob": ['SkinSen',  'Skin_Reaction','[Toxicity/Skin Sensitisation] Probability'],
+    "SkinSen_labels": ['Skin_Sensitization',],
+    "SkinSen_category": ['Skin Sensitisation','[Toxicity/Skin Sensitisation] Predictions'],
+    "SkinSen_Interpretation": ['[Toxicity/Skin Sensitisation] Interpretation'],
+
+    "Carcinogenicity_prob": ['Carcinogenicity' ,'[Toxicity/Carcinogenesis] Probability'],
+    "Carcinogenicity_category": ['[Toxicity/Carcinogenesis] Predictions'],
+    "Carcinogenesis_Interpretation": ['[Toxicity/Carcinogenesis] Interpretation'],
+
+    "Carcinogens_prob": ['Carcinogens_Lagunin'],
+
+    "Eye_corrosion_prob": ['EC','[Toxicity/Eye Corrosion] Probability'],
+    "Eye_corrosion_category": ['[Toxicity/Eye Corrosion] Predictions'],
+    "Eye_corrosion_Interpretation": ['[Toxicity/Eye Corrosion] Interpretation'],
+
+    "Eye_irritation_prob": ['EI','[Toxicity/Eye irritation] Probability'],
+    "Eye_irritation_category": ['[Toxicity/Eye irritation] Predictions'],
+    "Eye_irritation_Interpretation": ['[Toxicity/Eye irritation] Interpretation'],
+
+    "Respiratory_prob": ['Respiratory', '[Toxicity/Respiratory Disease] Probability'],
+    "Respiratory_category": ['[Toxicity/Respiratory Disease] Predictions'],
+    "Respiratory_Interpretation": ['[Toxicity/Respiratory Disease] Interpretation'],
+
+    "H_HT" : ['H-HT'],
+
+    "Neurotoxicity_DI": ['Neurotoxicity-DI'],
+    "Ototoxicity": ['Ototoxicity'],
+    "Hematotoxicity": ['Hematotoxicity'],
+    "Genotoxicity": ['Genotoxicity'],
+    "RPMI_8226": ['RPMI-8226'],
+    "Nephrotoxicity_DI": ['Nephrotoxicity-DI'],
+    "A549": ['A549'],
+    "HEK293": ['HEK293'],
+
+    "NR_AhR_prob": ['NR-AhR', '[Toxicity/NR-AhR] Probability'],
+    "NR_AhR_category": ['[Toxicity/NR-AhR] Predictions'],
+    "NR_AhR_Interpretation": ['[Toxicity/NR-AhR] Interpretation'],
+
+    "NR_AR_prob": ['NR-AR', '[Toxicity/NR-AR] Probability',],
+    "NR_AR_category": ['[Toxicity/NR-AR] Predictions'],
+    "NR_AR_Interpretation": ['[Toxicity/NR-AR] Interpretation'],
+
+    "NR_AR_LBD_category": ['[Toxicity/NR-AR-LBD] Predictions'],
+    "NR_AR_LBD_prob": ['NR-AR-LBD','[Toxicity/NR-AR-LBD] Probability'],
+    "NR_AR_LBD_Interpretation": ['[Toxicity/NR-AR-LBD] Interpretation'],
+
+    "NR_ER_category": ['[Toxicity/NR-ER] Predictions'],
+    "NR_ER_prob": ['NR-ER','[Toxicity/NR-ER] Probability'],
+    "NR_ER_Interpretation": ['[Toxicity/NR-ER] Interpretation'],
+
+    "NR_ER_LBD_category": ['[Toxicity/NR-ER-LBD] Predictions'],
+    "NR_ER_LBD_prob": ['NR-ER-LBD','[Toxicity/NR-ER-LBD] Probability'],
+    "NR_ER_LBD_Interpretation": ['[Toxicity/NR-ER-LBD] Interpretation'],
+
+    "NR_arom_category": ['[Toxicity/NR-Aromatase] Predictions'],
+    "NR_arom_prob": ['NR-Aromatase','[Toxicity/NR-Aromatase] Probability'],
+    "NR_arom_Interpretation": ['[Toxicity/NR-Aromatase] Interpretation'],
+
+    "NR_GR_category": ['[Toxicity/NR-GR] Predictions'],
+    "NR_GR_prob": ['[Toxicity/NR-GR] Probability'],
+    "NR_GR_Interpretation": ['[Toxicity/NR-GR] Interpretation'],
+
+    "NR_PPAR_gamma_category": ['[Toxicity/NR-PPAR-gamma] Predictions'],
+    "NR_PPAR_gamma_prob": ['NR-PPAR-gamma','[Toxicity/NR-PPAR-gamma] Probability'],
+    "NR_PPAR_gamma_Interpretation": ['[Toxicity/NR-PPAR-gamma] Interpretation'],
+
+    "NR_TR_category": ['[Toxicity/NR-TR] Predictions'],
+    "NR_TR_prob": ['[Toxicity/NR-TR] Probability'],
+    "NR_TR_Interpretation": ['[Toxicity/NR-TR] Interpretation'],
+
+    "SR_ARE_category": ['[Toxicity/SR-ARE] Predictions'],
+    "SR_ARE_prob": ['SR-ARE','[Toxicity/SR-ARE] Probability'],
+    "SR_ARE_Interpretation": ['[Toxicity/SR-ARE] Interpretation'],
+
+    "SR_ATAD5_category": ['[Toxicity/SR-ATAD5] Predictions'],
+    "SR_ATAD5_prob": ['SR-ATAD5', '[Toxicity/SR-ATAD5] Probability'],
+    "SR_ATAD5_Interpretation": ['[Toxicity/SR-ATAD5] Interpretation'],
+
+    "SR_HSE_category": ['[Toxicity/SR-HSE] Predictions'],
+    "SR_HSE_prob": ['SR-HSE','[Toxicity/SR-HSE] Probability'],
+    "SR_HSE_Interpretation": ['[Toxicity/SR-HSE] Interpretation'],
+
+    "SR_MMP_category": ['[Toxicity/SR-MMP] Predictions'],
+    "SR_MMP_prob": ['SR-MMP', '[Toxicity/SR-MMP] Probability'],
+    "SR_MMP_Interpretation": ['[Toxicity/SR-MMP] Interpretation'],
+
+    "SR_p53_category": [ '[Toxicity/SR-p53] Predictions'],
+    "SR_p53_prob": ['SR-p53','[Toxicity/SR-p53] Probability'],
+    "SR_p53_Interpretation": ['[Toxicity/SR-p53] Interpretation'],
+
+    "NonBiodegradable_category": ['[Toxicity/Biodegradation] Predictions'],
+    "NonBiodegradable_labels": ['NonBiodegradable'],
+    "NonBiodegradable_prob": ['[Toxicity/Biodegradation] Probability'],
+    "NonBiodegradable_Interpretation": ['[Toxicity/Biodegradation] Interpretation'],
+
+    "NonGenotoxic_Carcinogenicity_labels": ['NonGenotoxic_Carcinogenicity'],
+    "SureChEMBL_labels": ['SureChEMBL'],
+
+    "LD50_oral_labels": ['LD50_oral', 'LD50_oral_labels' ],
+    "LD50_oral": ['LD50_Zhu', 'Oral Rat Acute Toxicity (LD50)',
+                  '[Toxicity/Rat (Acute)] Predictions'],
+    "LD50_oral_Interpretation": ['[Toxicity/Rat (Acute)] Interpretation'],
+
+    "LOAEL": ['Oral Rat Chronic Toxicity (LOAEL)',
+              '[Toxicity/Rat (Chronic Oral)] Predictions'],
+    "LOAEL_Interpretation": ['[Toxicity/Rat (Chronic Oral)] Interpretation'],
+
+    "Avian_tox_category": ['[Toxicity/Avian] Predictions'],
+    "Avian_tox_Interpretation": ['[Toxicity/Avian] Interpretation'],
+    "Avian_tox_prob": ['[Toxicity/Avian] Probability'],
+
+    "Bee_tox_category": ['[Toxicity/Bee] Predictions'],
+    "Bee_tox_Interpretation": ['[Toxicity/Bee] Interpretation'],
+    "Bee_tox_prob": ['[Toxicity/Bee] Probability'],
+
+    "Crustacean_tox_category": ['[Toxicity/Crustacean] Predictions'],
+    "Crustacean_tox_Interpretation": ['[Toxicity/Crustacean] Interpretation'],
+    "Crustacean_tox_prob": ['[Toxicity/Crustacean] Probability'],
+
+    "Micronucleos_category": ['[Toxicity/Micronucleos] Predictions'],
+    "Micronucleos_Interpretation": ['[Toxicity/Micronucleos] Interpretation'],
+    "Micronucleos_prob": ['[Toxicity/Micronucleos] Probability'],
+    "Acute_Aquatic_Toxicity_labels": ['Acute_Aquatic_Toxicity'],
+    "FAF_Drugs4_Rule_labels": ['FAF-Drugs4 Rule'],
+    "Genotoxic_Carcinogenicity_Mutagenicity_labels": ['Genotoxic_Carcinogenicity_Mutagenicity'],
+    "ClinTox": ['ClinTox'],
+
+    "Max_tol_dose_human": ['Max. tolerated dose (human)',
+                                    '[Toxicity/Maximum Tolerated Dose] Predictions'],
+    "Max_tol_dose_human_Interpretation": ['[Toxicity/Maximum Tolerated Dose] Interpretation'],
+    }
