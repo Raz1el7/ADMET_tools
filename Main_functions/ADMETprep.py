@@ -176,8 +176,79 @@ def get_sub_dfs(df, list_column_groups, name):
 
     print(f"====== {name} ======\n")
     return df_fq, df_medchem, df_abs, df_dis, df_metab, df_exc, df_tox
+
+
 def display_min_max(df, list_of_properties):
     x = df[list_of_properties]
     a = x.min()
     b = x.max()
     return x, a, b
+
+
+def assign_color_by_property(row, rules):
+    '''
+    elif rule["type"] == "categorical":
+        yes, no = rule["thresholds"]
+        if value == yes:
+            return "🟢", "Verde"
+        elif value == no:
+            return "🔴", "Rojo"
+        else:
+            return "⚪", "Desconocido"
+    '''
+    prop = row["Property"]
+    value = row["Value"]
+
+    if prop not in rules:
+        return "⚪", "Desconocido"
+
+    rule = rules[prop]
+
+    # -----------------------
+    # Valores numéricos simples
+    # -----------------------
+    if rule["type"] == "numeric_up": #ascendente
+        low, high = rule["thresholds"]
+        if value <= low:
+            return "🟢", f"Verde (óptimo: Valor <= {low})"
+        elif value <= high:
+            return "🟡", f"Amarillo (óptimo: Valor <= {low} )"
+        else:
+            return "🔴", f"Rojo (óptimo: Valor <= {low})"
+
+    if rule["type"] == "numeric_down": #descendente
+        high, low  = rule["thresholds"]
+        if value >= high:
+            return "🟢", f"Verde (Valor >= {high})"
+        elif value >= low:
+            return "🟡", f"Amarillo (Valor >= {high})"
+        else:
+            return "🔴", f"Rojo (Valor >= {high})"
+    # -----------------------
+    # Valores categóricos (flexibles)
+    # -----------------------
+    elif rule["type"] == "categorical":
+        thresholds = rule["thresholds"]
+        for categories, color in thresholds:
+            if value in categories:
+                if color == "Green":
+                    return "🟢", f"Verde"
+                elif color == "Yellow":
+                    return "🟡", "Amarillo"
+                elif color == "Red":
+                    return "🔴", "Rojo"
+        return "⚪", "Desconocido"
+
+    # -----------------------
+    # Rango definido como "óptimo"
+    # -----------------------
+    elif rule["type"] == "range":
+        low, high = rule["green"]
+        if low <= value <= high:
+            return "🟢", f"Óptimo ({low}-{high})"
+        elif value < low:
+            return "🔴", f"Pequeño (óptimo: {low}-{high})"
+        else:
+            return "🔴", f"Grande (óptimo: {low}-{high})"
+
+    return "⚪", "Desconocido"
