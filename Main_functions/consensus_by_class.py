@@ -87,3 +87,22 @@ def consensus_score(dfs):
 def replace_point_with_comma(x):
     """Convierte punto decimal a coma en floats."""
     return str(x).replace('.', ',') if isinstance(x, float) else x
+
+#ejemplo de uso
+
+# ===============================
+# 1. Generar datasets base
+ai_AbsDis, swiss_AbsDis, pkcsm_AbsDis = generate_dfs()
+
+# 2. Calcular scores por rubro
+dfs_list = [ai_AbsDis, swiss_AbsDis, pkcsm_AbsDis]
+results = calcular_puntaje_admet_por_rubro(
+    dfs_list,
+    FQ=False, MedChem=False, Abs=True, Dis=True, Met=False, Exc=False, Tox=False
+)
+
+# 3. Calcular consenso (ejemplo con los 4 datasets)
+consenso = consensus_score(results)
+print("\n🔥 Consenso ADMET:")
+consenso = consenso.applymap(replace_point_with_comma)
+display(consenso)
